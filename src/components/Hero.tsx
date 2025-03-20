@@ -23,8 +23,8 @@ const Hero = () => {
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Team brainstorming at whiteboard"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Analytics dashboard showing increasing website traffic"
               className="rounded-cta"
             />
           </div>

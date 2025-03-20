@@ -4,6 +4,44 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    
+    // Handle home navigation
+    if (targetId === 'home') {
+      window.location.hash = '';
+      window.scrollTo({ top: 0 });
+      setIsOpen(false);
+      return;
+    }
+
+    // Handle content pages (privacy, terms, blog)
+    if (['privacy', 'terms', 'blog'].includes(targetId)) {
+      window.location.hash = href;
+      setIsOpen(false);
+      return;
+    }
+
+    // Handle section navigation
+    const element = document.getElementById(targetId);
+    if (element) {
+      const navHeight = 64; // Height of the navbar
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: 'instant'
+      });
+      setIsOpen(false);
+
+      // Update URL without triggering scroll
+      const currentHash = window.location.hash;
+      if (currentHash !== href) {
+        window.history.pushState(null, '', href);
+      }
+    }
+  };
+
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Services', href: '#services' },
@@ -17,7 +55,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <a href="#home" className="text-primary font-bold text-2xl">MandoMedia</a>
+            <a 
+              href="#home" 
+              onClick={(e) => handleNavClick(e, '#home')} 
+              className="text-primary font-bold text-2xl"
+            >
+              MandoMedia
+            </a>
           </div>
           
           {/* Desktop Navigation */}
@@ -26,6 +70,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-gray-700 hover:text-primary transition-colors"
               >
                 {item.name}
@@ -52,8 +97,8 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-background-accent rounded-full"
-                  onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </a>
