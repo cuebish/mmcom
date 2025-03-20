@@ -5,9 +5,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '#home' },
     { name: 'Services', href: '#services' },
-    { name: 'Team', href: '#team' },
+    { name: 'About Us', href: '#about' },
     { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <a href="#" className="text-primary font-bold text-2xl">MandoMedia</a>
+            <a href="#home" className="text-primary font-bold text-2xl">MandoMedia</a>
           </div>
           
           {/* Desktop Navigation */}
