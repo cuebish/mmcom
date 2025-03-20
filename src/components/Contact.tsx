@@ -23,15 +23,15 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-background-accent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        <div className="text-center mb-16 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Contact Us</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600">
             Ready to transform your digital presence? Get in touch with our team of experts.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-4xl">
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
