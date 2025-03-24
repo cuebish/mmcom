@@ -11,34 +11,34 @@ const Navbar = () => {
     // Handle home navigation
     if (targetId === 'home') {
       window.location.hash = '';
-      window.scrollTo({ top: 0 });
+      window.scrollTo({ 
+        top: 0,
+        behavior: 'smooth'
+      });
       setIsOpen(false);
       return;
     }
 
-    // Handle content pages (privacy, terms, blog)
-    if (['privacy', 'terms', 'blog'].includes(targetId)) {
+    // Handle content pages (privacy, terms)
+    if (['privacy', 'terms'].includes(targetId)) {
       window.location.hash = href;
       setIsOpen(false);
       return;
     }
 
-    // Handle section navigation
+    // Handle section navigation (including blog)
     const element = document.getElementById(targetId);
     if (element) {
       const navHeight = 64; // Height of the navbar
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - navHeight,
-        behavior: 'instant'
+        behavior: 'smooth'
       });
       setIsOpen(false);
 
       // Update URL without triggering scroll
-      const currentHash = window.location.hash;
-      if (currentHash !== href) {
-        window.history.pushState(null, '', href);
-      }
+      window.history.pushState(null, '', href);
     }
   };
 

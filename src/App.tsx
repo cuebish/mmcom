@@ -18,19 +18,29 @@ function App() {
       const newPath = window.location.hash.slice(1) || 'home';
       setCurrentPath(newPath);
       
-      // Instant scroll to top for Privacy, Terms, and Blog posts
+      // Handle section navigation
       const [mainPath] = newPath.split('/');
-      if (['privacy', 'terms', 'blog'].includes(mainPath)) {
+      if (['home', 'services', 'about', 'blog', 'contact'].includes(mainPath) && !newPath.includes('/')) {
+        const element = document.getElementById(mainPath);
+        if (element) {
+          const navHeight = 64; // Height of the navbar
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementPosition - navHeight,
+            behavior: 'smooth'
+          });
+        }
+      } else if (['privacy', 'terms'].includes(mainPath) || newPath.includes('/')) {
+        // Instant scroll to top for Privacy, Terms, and Blog posts
         window.scrollTo(0, 0);
       }
     };
 
     window.addEventListener('hashchange', handleHashChange);
     
-    // Initial scroll to top if starting on a content page
-    const [initialMainPath] = currentPath.split('/');
-    if (['privacy', 'terms', 'blog'].includes(initialMainPath)) {
-      window.scrollTo(0, 0);
+    // Initial navigation if needed
+    if (currentPath && currentPath !== 'home') {
+      handleHashChange();
     }
 
     return () => window.removeEventListener('hashchange', handleHashChange);
