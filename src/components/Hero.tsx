@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
           <div className="mb-12 lg:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              Transform Your Digital Presence
+              Transform Your<br className="hidden lg:block" /> Business Digital
             </h1>
             <p className="text-lg text-gray-600 mb-8">
               MandoMedia LLC helps businesses achieve exceptional growth through strategic digital marketing solutions. From SEO to Performance Marketing, we deliver results that matter.
