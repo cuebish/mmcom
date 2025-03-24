@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,9 +11,40 @@ const Contact = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.send(
+        'service_mandocontact', // Service ID
+        'template_contact', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        'YOUR_PUBLIC_KEY' // Public Key
+      );
+
+      if (result.status === 200) {
+        toast.success('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      }
+    } catch (error) {
+      toast.error('Failed to send message. Please try again.');
+      console.error('EmailJS Error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -23,6 +56,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-background-accent">
+      <Toaster position="top-right" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <div className="text-center mb-16 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Contact Us</h2>
@@ -46,6 +80,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -60,6 +95,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -73,6 +109,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -87,13 +124,17 @@ const Contact = () => {
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-light transition-colors"
+                disabled={isSubmitting}
+                className={`w-full px-8 py-4 bg-primary text-white rounded-full transition-colors ${
+                  isSubmitting ? 'opacity-75 cursor-not-allowed' : 'hover:bg-primary-light'
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>

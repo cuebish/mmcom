@@ -58,9 +58,13 @@ const Navbar = () => {
             <a 
               href="#home" 
               onClick={(e) => handleNavClick(e, '#home')} 
-              className="text-primary font-bold text-2xl"
+              className="flex items-center"
             >
-              MandoMedia
+              <img 
+                src="https://s3.us-east-2.amazonaws.com/mando.media/mmLogoDefault.svg"
+                alt="MandoMedia"
+                className="h-16"
+              />
             </a>
           </div>
           

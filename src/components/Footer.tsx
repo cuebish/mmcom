@@ -41,7 +41,17 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col space-y-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">MandoMedia</h3>
+            <a 
+              href="#home" 
+              onClick={(e) => handleNavClick(e, '#home')}
+              className="inline-block mb-4"
+            >
+              <img 
+                src="https://s3.us-east-2.amazonaws.com/mando.media/mmLogoLight.svg"
+                alt="MandoMedia"
+                className="h-20"
+              />
+            </a>
             <p className="text-gray-300 mb-4 max-w-2xl">
               Transforming businesses through innovative digital marketing solutions.
             </p>
