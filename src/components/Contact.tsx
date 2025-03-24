@@ -1,57 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import emailjs from '@emailjs/browser';
+import { useForm } from '@formspree/react';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
+  const [state, handleSubmit] = useForm("xnnpvwed");
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
+    
     try {
-      const result = await emailjs.send(
-        'service_mandocontact', // Service ID
-        'template_contact', // Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        },
-        'YOUR_PUBLIC_KEY' // Public Key
-      );
-
-      if (result.status === 200) {
+      await handleSubmit(e);
+      if (state.succeeded) {
         toast.success('Message sent successfully!');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          message: '',
-        });
+        // Reset form
+        const form = e.target as HTMLFormElement;
+        form.reset();
       }
     } catch (error) {
       toast.error('Failed to send message. Please try again.');
-      console.error('EmailJS Error:', error);
-    } finally {
-      setIsSubmitting(false);
+      console.error('Formspree Error:', error);
     }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (
@@ -67,7 +36,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-4xl">
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={onSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Full Name
@@ -76,11 +45,9 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   required
-                  disabled={isSubmitting}
+                  disabled={state.submitting}
                 />
               </div>
               <div>
@@ -91,11 +58,9 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   required
-                  disabled={isSubmitting}
+                  disabled={state.submitting}
                 />
               </div>
               <div>
@@ -106,10 +71,8 @@ const Contact = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
-                  disabled={isSubmitting}
+                  disabled={state.submitting}
                 />
               </div>
               <div>
@@ -119,22 +82,20 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   required
-                  disabled={isSubmitting}
+                  disabled={state.submitting}
                 />
               </div>
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={state.submitting}
                 className={`w-full px-8 py-4 bg-primary text-white rounded-full transition-colors ${
-                  isSubmitting ? 'opacity-75 cursor-not-allowed' : 'hover:bg-primary-light'
+                  state.submitting ? 'opacity-75 cursor-not-allowed' : 'hover:bg-primary-light'
                 }`}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {state.submitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
