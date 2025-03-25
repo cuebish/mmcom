@@ -27,7 +27,7 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <section id="blog" className="py-20 bg-background-primary">
+    <section id="blog" className="py-20 bg-background-primary" aria-label="Blog Posts">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Blog</h2>
@@ -38,22 +38,33 @@ const Blog = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <article key={index} className="bg-[linear-gradient(rgba(118,226,255,0.16)_0%,rgba(118,226,255,0)_100%)] border border-transparent hover:border-secondary transition-colors rounded-lg overflow-hidden">
+            <article 
+              key={index} 
+              className="bg-[linear-gradient(rgba(118,226,255,0.16)_0%,rgba(118,226,255,0)_100%)] border border-transparent hover:border-secondary transition-colors rounded-lg overflow-hidden"
+              itemScope 
+              itemType="http://schema.org/BlogPosting"
+            >
               <img
                 src={post.image}
                 alt={post.title}
                 className="w-full h-48 object-cover"
+                loading="lazy"
+                width="800"
+                height="400"
+                itemProp="image"
               />
               <div className="p-6">
-                <span className="text-sm text-gray-500">{post.date}</span>
-                <h3 className="text-xl font-semibold text-primary mt-2 mb-3">{post.title}</h3>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                <time dateTime={post.date} className="text-sm text-gray-500" itemProp="datePublished">{post.date}</time>
+                <h3 className="text-xl font-semibold text-primary mt-2 mb-3" itemProp="headline">{post.title}</h3>
+                <p className="text-gray-600 mb-4" itemProp="description">{post.excerpt}</p>
                 <a
                   href={`#blog/${post.slug}`}
                   className="inline-flex items-center text-[rgb(0,97,210)] hover:text-primary transition-colors"
+                  aria-label={`Read more about ${post.title}`}
+                  itemProp="url"
                 >
                   Read More
-                  <ArrowRight className="ml-2" size={16} />
+                  <ArrowRight className="ml-2" size={16} aria-hidden="true" />
                 </a>
               </div>
             </article>
