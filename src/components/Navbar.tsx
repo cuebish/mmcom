@@ -96,7 +96,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden relative w-full">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <a
@@ -109,6 +109,7 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
+            <div className="h-1 bg-secondary absolute bottom-0 left-0 right-0 w-full" style={{ height: '6px' }} />
           </div>
         )}
       </div>
