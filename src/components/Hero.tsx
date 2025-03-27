@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="bg-background-primary pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-          <div className="mt-12 lg:mt-0">
+          <div className="mt-6 lg:mt-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
               Transform Your<br className="hidden lg:block" /> Digital Presence
             </h1>
