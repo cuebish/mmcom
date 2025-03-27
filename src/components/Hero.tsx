@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="https://s3.us-east-2.amazonaws.com/mando.media/mmBarChart.png"
               alt="Analytics dashboard showing increasing website traffic and digital marketing performance metrics"
               className="rounded-cta"
               loading="eager"
