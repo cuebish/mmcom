@@ -3,23 +3,23 @@ import { ArrowRight } from 'lucide-react';
 
 const blogPosts = [
   {
-    title: 'The Future of SEO in 2025',
-    excerpt: 'Discover the latest trends and strategies that will shape SEO in the coming year.',
-    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    title: 'The Evolution of SEO in the Age of AI: How Google Search is Being Rewritten',
+    excerpt: 'Search engine optimization is undergoing a seismic shift driven by AI advancements and a fundamental reimagining of how Google surfaces information.',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     date: 'May 15, 2025',
     slug: 'future-of-seo-2024',
   },
   {
-    title: 'Maximizing ROI with Performance Marketing',
-    excerpt: 'Learn how to optimize your marketing budget and achieve better returns.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    title: 'Maximizing ROI in SEO: A Strategic Blueprint for Sustainable Organic Growth',
+    excerpt: 'SEO success is no longer about chasing vanity metrics. Learn how to build a sustainable, revenue-generating engine that delivers long-term ROI.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     date: 'Apr 10, 2025',
     slug: 'maximizing-roi-performance-marketing',
   },
   {
-    title: 'The Power of Data-Driven Marketing',
-    excerpt: 'How to use data analytics to make better marketing decisions.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    title: 'The Rise of Reddit, Quora, and User-Generated SEO in 2025',
+    excerpt: 'Discover how user-generated platforms are dominating search results and what this means for your SEO strategy.',
+    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     date: 'Mar 5, 2025',
     slug: 'power-of-data-driven-marketing',
   },
