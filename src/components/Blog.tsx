@@ -3,24 +3,24 @@ import { ArrowRight } from 'lucide-react';
 
 const blogPosts = [
   {
-    title: 'The Future of SEO in 2024',
+    title: 'The Future of SEO in 2025',
     excerpt: 'Discover the latest trends and strategies that will shape SEO in the coming year.',
     image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    date: 'Mar 15, 2024',
+    date: 'May 15, 2025',
     slug: 'future-of-seo-2024',
   },
   {
     title: 'Maximizing ROI with Performance Marketing',
     excerpt: 'Learn how to optimize your marketing budget and achieve better returns.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    date: 'Mar 10, 2024',
+    date: 'Apr 10, 2025',
     slug: 'maximizing-roi-performance-marketing',
   },
   {
     title: 'The Power of Data-Driven Marketing',
     excerpt: 'How to use data analytics to make better marketing decisions.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    date: 'Mar 5, 2024',
+    date: 'Mar 5, 2025',
     slug: 'power-of-data-driven-marketing',
   },
 ];

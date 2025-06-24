@@ -2,15 +2,15 @@ import React from 'react';
 
 const blogContent = {
   'future-of-seo-2024': {
-    title: 'The Future of SEO in 2024',
-    date: 'Mar 15, 2024',
+    title: 'The Future of SEO in 2025',
+    date: 'May 15, 2025',
     author: 'Humberto J. Cuebas',
     authorRole: 'Founder & CEO',
     heroImage: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80',
     excerpt: 'Discover the latest trends and strategies that will shape SEO in the coming year.',
     content: `
       <h2>The Evolution of Search Engine Optimization</h2>
-      <p>As we progress through 2024, the landscape of SEO continues to evolve at an unprecedented pace. With the integration of AI and machine learning into search algorithms, traditional SEO practices are being redefined. Here's what's shaping the future of SEO:</p>
+      <p>As we progress through 2025, the landscape of SEO continues to evolve at an unprecedented pace. With the integration of AI and machine learning into search algorithms, traditional SEO practices are being redefined. Here's what's shaping the future of SEO:</p>
 
       <h3>1. AI-Driven Content Optimization</h3>
       <p>Artificial Intelligence is revolutionizing how search engines understand and rank content. The focus has shifted from keyword density to comprehensive topic coverage and user intent matching. Content that provides genuine value and addresses user needs comprehensively is being prioritized over traditional keyword-optimized content.</p>
@@ -24,7 +24,7 @@ const blogContent = {
       <h3>4. Mobile-First Indexing</h3>
       <p>With mobile devices accounting for the majority of web traffic, mobile optimization is no longer optional. Google's mobile-first indexing means that your site's mobile version is the primary version considered for ranking and indexing.</p>
 
-      <h2>Actionable Strategies for 2024</h2>
+      <h2>Actionable Strategies for 2025</h2>
       <p>To stay ahead in the evolving SEO landscape, consider implementing these strategies:</p>
       <ul>
         <li>Invest in comprehensive, value-driven content that addresses user intent</li>
@@ -35,12 +35,12 @@ const blogContent = {
       </ul>
 
       <h2>Looking Ahead</h2>
-      <p>The future of SEO lies in creating user-centric experiences while adapting to technological advancements. Success in 2024 requires a balanced approach that combines technical excellence with high-quality, valuable content that truly serves your audience's needs.</p>
+      <p>The future of SEO lies in creating user-centric experiences while adapting to technological advancements. Success in 2025 requires a balanced approach that combines technical excellence with high-quality, valuable content that truly serves your audience's needs.</p>
     `,
   },
   'maximizing-roi-performance-marketing': {
     title: 'Maximizing ROI with Performance Marketing',
-    date: 'Mar 10, 2024',
+    date: 'Apr 10, 2025',
     author: 'Humberto J. Cuebas',
     authorRole: 'Founder & CEO',
     heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80',
@@ -73,7 +73,7 @@ const blogContent = {
   },
   'power-of-data-driven-marketing': {
     title: 'The Power of Data-Driven Marketing',
-    date: 'Mar 5, 2024',
+    date: 'Mar 5, 2025',
     author: 'Humberto J. Cuebas',
     authorRole: 'Founder & CEO',
     heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80',

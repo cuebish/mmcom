@@ -14,7 +14,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="flex justify-center">
             <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="https://s3.us-east-2.amazonaws.com/mando.media/hjcProfile.png"
               alt="Humberto J. Cuebas - Founder"
               className="w-64 h-64 rounded-full object-cover shadow-lg"
             />
@@ -24,13 +24,13 @@ const About = () => {
             <p className="text-gray-600 mb-6">Founder & CEO</p>
             <div className="prose prose-lg text-gray-600">
               <p className="mb-4">
-                MandoMedia was born from a vision to revolutionize digital marketing through a performance-first approach. After years of serving in director-level positions at leading U.S. digital marketing agencies, Humberto recognized the need for a more focused, results-driven methodology.
+                At MandoMedia, we help growth-focused brands succeed in a digital landscape that's evolving faster than ever. Our approach combines proven performance marketing expertise with the latest advancements in AI and automation to deliver results that are measurable, scalable, and built to last.
               </p>
               <p className="mb-4">
-                Drawing from extensive experience in performance marketing and conversion optimization, we've built our foundation on a down-funnel vision that prioritizes measurable results and ROI. This approach, refined through years of industry leadership, enables us to deliver exceptional value to our clients.
+                After years leading digital strategy at top U.S. marketing agencies, I founded MandoMedia with a clear vision: to create a smarter, more agile partner for businesses that care about ROI. We specialize in building marketing systems that are not only effective today but designed to adapt and perform as new technologies and channels emerge.
               </p>
               <p>
-                Today, we continue to evolve and innovate, staying ahead of digital marketing trends while maintaining our core focus on performance and results. Our success is measured by the success of our clients, and we're committed to driving meaningful growth for businesses through strategic digital solutions.
+                Whether it's AI-driven creative testing, automated lead nurturing, or full-funnel performance strategy, we bring the tools, insights, and execution needed to help you grow faster and more efficiently. At MandoMedia, we don't just keep up with the future of marketing—we help our clients lead it.
               </p>
             </div>
           </div>
