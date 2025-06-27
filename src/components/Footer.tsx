@@ -36,6 +36,8 @@ const Footer = () => {
     }
   };
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-[#0f1942] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -59,7 +61,7 @@ const Footer = () => {
           
           <div className="flex flex-col md:flex-row md:items-center justify-between">
             <p className="text-sm text-gray-300 mb-4 md:mb-0">
-              © {new Date().getFullYear()} MandoMedia LLC. All rights reserved.
+              © {currentYear} MandoMedia LLC. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a 

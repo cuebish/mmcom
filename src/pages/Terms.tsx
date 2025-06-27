@@ -106,7 +106,7 @@ const Terms = () => {
               MandoMedia LLC<br />
               1607 AVE PONCE DE LEON STE GM6 #674<br />
               SAN JUAN, PR 00909<br />
-              Email: info@mando-media.com<br />
+              Email: info@mando.media<br />
               Phone: (704) 363-6333
             </p>
           </section>
