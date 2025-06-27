@@ -6,6 +6,25 @@ import toast, { Toaster } from 'react-hot-toast';
 const Contact = () => {
   const [state, handleSubmit] = useForm("xnnpvwed");
 
+  const formatPhoneNumber = (value: string) => {
+    // Remove all non-digits
+    const phoneNumber = value.replace(/\D/g, '');
+    
+    // Format as (XXX) XXX-XXXX
+    if (phoneNumber.length >= 6) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    } else if (phoneNumber.length >= 3) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    } else {
+      return phoneNumber;
+    }
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneNumber(e.target.value);
+    e.target.value = formatted;
+  };
+
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
@@ -71,6 +90,9 @@ const Contact = () => {
                   type="tel"
                   id="phone"
                   name="phone"
+                  placeholder="(000) 000-0000"
+                  maxLength={14}
+                  onChange={handlePhoneChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   disabled={state.submitting}
                 />
@@ -108,8 +130,8 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-secondary-dark mr-3" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:info@mando.media" className="text-gray-600 hover:text-primary">
-                      info@mando.media
+                    <a href="mailto:humberto@mando.media" className="text-gray-600 hover:text-primary">
+                      humberto@mando.media
                     </a>
                   </div>
                 </div>
