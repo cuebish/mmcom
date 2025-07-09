@@ -64,6 +64,7 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
+                  placeholder="John Doe"
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   required
                   disabled={state.submitting}
@@ -77,6 +78,7 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
+                  placeholder="john.doe@example.com"
                   className="w-full px-4 py-3 border border-gray-300 rounded-cta focus:ring-2 focus:ring-secondary focus:border-transparent"
                   required
                   disabled={state.submitting}
